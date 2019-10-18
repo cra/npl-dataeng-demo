@@ -9,18 +9,25 @@ var handleRequest = function(request, response) {
   w.publish("my-topic", {dt: Date.now(), ua: request.headers['user-agent'], source: "composed"});
   response.writeHead(200);
   response.end(`
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <style>
       #message {
         text-align: center;
         margin-top: 100px;
         font-size: 18pt;
       }
+      p {
+        text-align: center;
+        font-size: 12pt;
+      }
     </style>
   </head>
   <body>
     <P id="message">Hello!</p>
+    <p>Этот сервер прямиком из docker-compose.</p>
   </body>
 </html>`);
 };

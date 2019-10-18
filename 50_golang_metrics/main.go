@@ -71,7 +71,7 @@ func main() {
 		20,
 	)
 
-	if err := consumer.ConnectToNSQD("127.0.0.1:32813"); err != nil {
+	if err := consumer.ConnectToNSQD("127.0.0.1:32783"); err != nil {
 		log.Fatal(err)
 	}
 

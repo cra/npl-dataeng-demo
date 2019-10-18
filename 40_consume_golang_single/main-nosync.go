@@ -15,7 +15,7 @@ func main() {
 		log.Printf("Got a message with body: %v", buf)
 		return nil
 	}))
-	err := c.ConnectToNSQD("127.0.0.1:32780")
+	err := c.ConnectToNSQD("127.0.0.1:32783")
 	if err != nil {
 		log.Panic("Could not connect")
 	}

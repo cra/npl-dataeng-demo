@@ -10,7 +10,7 @@ import (
 
 func main() {
 	wg := &sync.WaitGroup{}
-	wg.Add(1)
+	wg.Add(4)
 
 	config := nsq.NewConfig()
 	c, _ := nsq.NewConsumer("my-topic", "ch", config)
@@ -20,7 +20,7 @@ func main() {
 		wg.Done()
 		return nil
 	}))
-	err := c.ConnectToNSQD("127.0.0.1:32780")
+	err := c.ConnectToNSQD("127.0.0.1:32783")
 	if err != nil {
 		log.Panic("Could not connect")
 	}
