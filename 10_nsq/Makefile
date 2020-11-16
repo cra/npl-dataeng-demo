@@ -5,7 +5,7 @@ run_lookup:
 	nsqlookupd
 
 run_daemon:
-	nsqd --lookupd-tcp-address=127.0.0.1:4160 --data-path=/tmp/tmp.VgrqFKlQgj
+	nsqd --lookupd-tcp-address=127.0.0.1:4160 --data-path=/tmp/tmp.Kf3VgFJqBF
 
 run_admin:
 	nsqadmin --lookupd-http-address=127.0.0.1:4161

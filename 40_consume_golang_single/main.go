@@ -20,7 +20,7 @@ func main() {
 		wg.Done()
 		return nil
 	}))
-	err := c.ConnectToNSQD("127.0.0.1:32783")
+	err := c.ConnectToNSQD("127.0.0.1:32781")
 	if err != nil {
 		log.Panic("Could not connect")
 	}

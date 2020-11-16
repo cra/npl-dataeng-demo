@@ -6,3 +6,6 @@ build:
 
 run:
 	docker run -it --net host ${COMPONENT}:${VERSION}
+
+echo:
+	echo ${VERSION}

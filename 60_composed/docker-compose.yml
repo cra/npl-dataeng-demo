@@ -29,7 +29,7 @@ services:
     depends_on:
       - nsqd
     ports:
-      - "8080:8080"
+      - "8084:8080"
 
   consumer:
     build: consumer

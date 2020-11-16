@@ -10,7 +10,7 @@ var handleRequest = function(request, response) {
       #message {
         text-align: center;
         margin-top: 100px;
-        font-size: 18pt;
+        font-size: 22pt;
       }
     </style>
   </head>

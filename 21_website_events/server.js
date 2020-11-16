@@ -1,6 +1,6 @@
 const http = require("http");
 const nsq = require('nsqjs');
-const w = new nsq.Writer('127.0.0.1', 32790);
+const w = new nsq.Writer('127.0.0.1', 32776);
 w.connect()
 
 const topic = "my-topic-site";

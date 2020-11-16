@@ -1,6 +1,6 @@
 const http = require("http");
 const nsq = require('nsqjs');
-const w = new nsq.Writer('127.0.0.1', 4150);
+const w = new nsq.Writer('127.0.0.1', 32776);
 w.connect()
 
 var handleRequest = function(request, response) {
@@ -26,12 +26,12 @@ var handleRequest = function(request, response) {
     </style>
   </head>
   <body>
-    <P id="message">Hello?</p>
-    <p>Этот сервер уже что-то пишет в nsq</p>
+    <P id="message">Hello?!</p>
+    <p>Этот сервер уже в докере и что-то пишет в nsq</p>
   </body>
 </html>`);
 };
 
 
 var www = http.createServer(handleRequest);
-www.listen(8080);
+www.listen(8082);

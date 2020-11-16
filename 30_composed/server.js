@@ -6,7 +6,12 @@ w.connect()
 var handleRequest = function(request, response) {
 
   console.log('Received request for URL: ' + request.url)
-  w.publish("my-topic", {dt: Date.now(), ua: request.headers['user-agent'], source: "composed"});
+  w.publish("my-topic", {
+    dt: Date.now(),
+    ua: request.headers['user-agent'],
+    source: "composed"
+    }
+  );
   response.writeHead(200);
   response.end(`
 <!doctype html>

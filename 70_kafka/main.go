@@ -1,16 +1,13 @@
 package main
 
 import (
-	"fmt"
-	// "strings"
-
-	"github.com/Shopify/sarama"
-	// sc "github.com/bsm/sarama-cluster"
+	"fmt"                       // "strings"
+	"github.com/Shopify/sarama" // sc "github.com/bsm/sarama-cluster"
 	"os"
 	"sync"
 )
 
-// run as go bulid && KAFKA=90.90.60.90:9000 TOPIC=my.cool.topic main
+// run as go build && KAFKA=90.90.60.90:9000 TOPIC=my.cool.topic main
 func main() {
 	config := sarama.NewConfig()
 	consumer, err := sarama.NewConsumer([]string{os.Getenv("KAFKA")}, config)
