@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	nsq "github.com/bitly/go-nsq"
+	nsq "github.com/nsqio/go-nsq"
 )
 
 type BusMessage struct {
@@ -42,7 +42,7 @@ func (h *MessageHandler) HandleMessage(m *nsq.Message) error {
 func main() {
 	config := nsq.NewConfig()
 
-	consumer, err := nsq.NewConsumer("my-topic", "ch", config)
+	consumer, err := nsq.NewConsumer("my-topic-site", "ch", config)
 	if err != nil {
 		log.Fatal(err)
 	}

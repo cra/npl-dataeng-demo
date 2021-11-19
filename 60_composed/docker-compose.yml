@@ -38,3 +38,15 @@ services:
       - nsqlookupd
     ports:
       - "53000:2112"
+
+  prom:
+    image: prom/prometheus
+    ports:
+      - 9000:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: --web-enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
+
+volumes:
+  prometheus-data:

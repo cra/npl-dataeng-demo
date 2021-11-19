@@ -5,7 +5,7 @@ import (
 	"log"
 	"sync"
 
-	nsq "github.com/bitly/go-nsq"
+	nsq "github.com/nsqio/go-nsq"
 )
 
 type BusMessage struct {
@@ -19,7 +19,7 @@ func main() {
 	wg.Add(1)
 
 	config := nsq.NewConfig()
-	c, _ := nsq.NewConsumer("my-topic", "ch", config)
+	c, _ := nsq.NewConsumer("my-topic-site", "ch", config)
 	c.AddHandler(nsq.HandlerFunc(func(message *nsq.Message) error {
 		//buf := bytes.NewBuffer(message.Body)
 
@@ -32,7 +32,7 @@ func main() {
 		wg.Done()
 		return err
 	}))
-	err := c.ConnectToNSQD("127.0.0.1:32781")
+	err := c.ConnectToNSQD("127.0.0.1:49167")
 	if err != nil {
 		log.Panic("Could not connect")
 	}

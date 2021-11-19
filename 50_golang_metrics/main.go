@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	nsq "github.com/bitly/go-nsq"
+	nsq "github.com/nsqio/go-nsq"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -55,7 +55,7 @@ func (h *MessageHandler) HandleMessage(m *nsq.Message) error {
 func main() {
 	config := nsq.NewConfig()
 
-	consumer, err := nsq.NewConsumer("my-topic", "ch", config)
+	consumer, err := nsq.NewConsumer("my-topic-site", "ch", config)
 	if err != nil {
 		log.Fatal(err)
 	}
